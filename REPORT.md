@@ -57,7 +57,7 @@ curl http://localhost:5000/products
 
 - `ghcr.io/<github_username_or_org>/artcrafts-api:1.0.0`
 
-**Steps (push):**
+**Option A: manual push (from your PC)**
 
 1) Create a GitHub Personal Access Token (classic) with at least:
    - `write:packages`
@@ -74,6 +74,18 @@ docker push ghcr.io/<github_username_or_org>/artcrafts-api:1.0.0
 ```
 
 **Note:** To allow your lecturer/marker to pull without logging in, set the package visibility to **Public** in GitHub Packages.
+
+**Option B: publish via GitHub Actions (recommended)**
+
+This repository includes `.github/workflows/publish-ghcr.yml`. After pushing your code to GitHub:
+
+- pushing to `main` publishes `latest`
+- pushing a tag like `v1.0.0` publishes `1.0.0`
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
 
 ### (ii) Docker Compose file
 
@@ -122,4 +134,3 @@ curl http://localhost:5000/products
 - `docker compose ps` showing container is `Up` on port `5000`
 - `curl http://localhost:5000/products` output
 - GHCR package page showing the pushed tag `1.0.0` (and visibility)
-

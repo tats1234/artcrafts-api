@@ -54,6 +54,8 @@ GHCR image name format:
 
 - `ghcr.io/<github_username_or_org>/artcrafts-api:1.0.0`
 
+### Option A: push from your PC (manual)
+
 ### Push image to GHCR
 
 1) Create a GitHub Personal Access Token (classic) with `write:packages` (and `read:packages`).
@@ -72,6 +74,20 @@ PowerShell equivalent login:
 ```powershell
 $env:GITHUB_TOKEN = "<YOUR_GITHUB_TOKEN>"
 $env:GITHUB_TOKEN | docker login ghcr.io -u "<github_username>" --password-stdin
+```
+
+### Option B: publish via GitHub Actions (no Docker PAT needed)
+
+This repo includes a workflow at `.github/workflows/publish-ghcr.yml` that builds and publishes the image to GHCR:
+
+- Push to `main` → publishes `latest` (and a short SHA tag).
+- Push tag `v1.0.0` → publishes `1.0.0`.
+
+Tag and push a release:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
 ```
 
 ### Pull from GHCR and run locally
