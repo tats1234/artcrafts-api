@@ -1,0 +1,4 @@
+.docker-config/
+__pycache__/
+*.pyc
+.env
