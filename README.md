@@ -1,10 +1,10 @@
 # ArtCrafts API (Flask)
 
-Small “Hello World” REST API packaged as a Docker container.
+Small "Hello World" REST API packaged as a Docker container.
 
 ## Endpoint
 
-- `GET /products` → static JSON list of dummy craft products
+- `GET /products` -> static JSON list of dummy craft products
 
 Example:
 
@@ -80,8 +80,8 @@ $env:GITHUB_TOKEN | docker login ghcr.io -u "<github_username>" --password-stdin
 
 This repo includes a workflow at `.github/workflows/publish-ghcr.yml` that builds and publishes the image to GHCR:
 
-- Push to `main` → publishes `latest` (and a short SHA tag).
-- Push tag `v1.0.0` → publishes `1.0.0`.
+- Push to `main` -> publishes `latest` (and a short SHA tag).
+- Push tag `v1.0.0` -> publishes `1.0.0`.
 
 Tag and push a release:
 

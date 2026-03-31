@@ -1,4 +1,4 @@
-# Assignment Report — Flask REST API in Docker + GHCR
+# Assignment Report - Flask REST API in Docker + GHCR
 
 ## (a) Hello World API endpoint (Flask)
 
@@ -6,9 +6,9 @@
 
 **Implemented endpoints:**
 
-- `GET /` → returns “Hello World” message
-- `GET /products` → returns static JSON list of dummy craft products (2–3 items)
-- `GET /health` → simple health check
+- `GET /` -> returns "Hello World" message
+- `GET /products` -> returns static JSON list of dummy craft products (2-3 items)
+- `GET /health` -> simple health check
 
 **Source files:**
 
@@ -49,9 +49,9 @@ curl http://localhost:5000/products
 
 ## (c) Deployment & sharing
 
-### (i) Push image to registry (GitHub Container Registry — GHCR)
+### (i) Push image to registry (GitHub Container Registry - GHCR)
 
-**Chosen registry:** GitHub Container Registry (`ghcr.io`) — free for public images.
+**Chosen registry:** GitHub Container Registry (`ghcr.io`) - free for public images.
 
 **Image name format:**
 
