@@ -127,6 +127,18 @@ docker compose up -d --no-build
 curl http://localhost:5000/products
 ```
 
+## Optional: Deploy on Hugging Face Spaces (Docker)
+
+If you want a public, shareable URL for your API, you can deploy the same Dockerfile to a Hugging Face **Docker Space**:
+
+1) Create a new Space with **SDK = Docker** (Public).
+2) Ensure the Space `README.md` starts with YAML front matter including:
+   - `sdk: docker`
+   - `app_port: 5000`
+3) Push/upload these files to the Space repo: `Dockerfile`, `app.py`, `requirements.txt`, `README.md`.
+4) Share the Space page + direct API endpoint:
+   - `https://<space-subdomain>.hf.space/products`
+
 ## Evidence to include (screenshots / outputs)
 
 - `docker build` success output

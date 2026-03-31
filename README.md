@@ -1,3 +1,9 @@
+---
+title: ArtCrafts API (Flask)
+sdk: docker
+app_port: 5000
+---
+
 # ArtCrafts API (Flask)
 
 Small "Hello World" REST API packaged as a Docker container.
@@ -41,6 +47,17 @@ cp .env.example .env
 docker compose pull
 docker compose up -d --no-build
 ```
+
+## Deploy to Hugging Face Spaces (Docker)
+
+This repo is compatible with a Hugging Face Docker Space (see the YAML block at the top of this file with `sdk: docker` and `app_port: 5000`).
+
+High-level steps:
+
+1) Create a new Space with **SDK = Docker** and make it public.
+2) Push/upload these files to the Space repo: `Dockerfile`, `app.py`, `requirements.txt`, `README.md`.
+3) After the Space builds, your API will be reachable at:
+   - `https://<space-subdomain>.hf.space/products`
 
 Test:
 
